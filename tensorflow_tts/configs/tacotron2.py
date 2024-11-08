@@ -76,7 +76,7 @@ class Tacotron2Config(BaseConfig):
             self.vocab_size = len(synpaflex_symbols)
         elif dataset == "jsut":
             self.vocab_size = len(jsut_symbols)
-		elif dataset == "georgian":
+        elif dataset == "georgian":
             self.vocab_size = len(georgian_symbols)
         else:
             raise ValueError("No such dataset: {}".format(dataset))
