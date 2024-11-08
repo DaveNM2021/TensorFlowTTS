@@ -3,6 +3,7 @@ from tensorflow_tts.utils.cleaners import (
     collapse_whitespace,
     convert_to_ascii,
     english_cleaners,
+    georgian_cleaners,
     expand_abbreviations,
     expand_numbers,
     lowercase,
