@@ -38,6 +38,8 @@ from tensorflow_tts.processor import ThorstenProcessor
 from tensorflow_tts.processor import LJSpeechUltimateProcessor
 from tensorflow_tts.processor import SynpaflexProcessor
 from tensorflow_tts.processor import JSUTProcessor
+from tensorflow_tts.processor import GeorgianProcessor
+
 from tensorflow_tts.processor.ljspeech import LJSPEECH_SYMBOLS
 from tensorflow_tts.processor.baker import BAKER_SYMBOLS
 from tensorflow_tts.processor.kss import KSS_SYMBOLS
@@ -46,6 +48,7 @@ from tensorflow_tts.processor.thorsten import THORSTEN_SYMBOLS
 from tensorflow_tts.processor.ljspeechu import LJSPEECH_U_SYMBOLS
 from tensorflow_tts.processor.synpaflex import SYNPAFLEX_SYMBOLS
 from tensorflow_tts.processor.jsut import JSUT_SYMBOLS
+from tensorflow_tts.processor.georgian import GEORGIAN_SYMBOLS
 
 from tensorflow_tts.utils import remove_outlier
 
@@ -76,7 +79,7 @@ def parse_and_config():
         "--dataset",
         type=str,
         default="ljspeech",
-        choices=["ljspeech", "kss", "libritts", "baker", "thorsten", "ljspeechu", "synpaflex", "jsut"],
+        choices=["ljspeech", "kss", "libritts", "baker", "thorsten", "ljspeechu", "synpaflex", "jsut", "georgian"],
         help="Dataset to preprocess.",
     )
     parser.add_argument(
@@ -360,6 +363,7 @@ def preprocess():
         "ljspeechu": LJSpeechUltimateProcessor,
         "synpaflex": SynpaflexProcessor,
         "jsut": JSUTProcessor,
+		"georgian": GeorgianProcessor,
     }
 
     dataset_symbol = {
@@ -371,6 +375,7 @@ def preprocess():
         "ljspeechu": LJSPEECH_U_SYMBOLS,
         "synpaflex": SYNPAFLEX_SYMBOLS,
         "jsut": JSUT_SYMBOLS,
+		"georgian": GEORGIAN_SYMBOLS,
     }
 
     dataset_cleaner = {
@@ -382,6 +387,7 @@ def preprocess():
         "ljspeechu": "english_cleaners",
         "synpaflex": "basic_cleaners",
         "jsut": None,
+		"georgian": "georgian_cleaners",
     }
 
     logging.info(f"Selected '{config['dataset']}' processor.")

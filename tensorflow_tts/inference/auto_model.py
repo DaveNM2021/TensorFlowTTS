@@ -106,6 +106,7 @@ class TFAutoModel(object):
                     try:
                         model.load_weights(pretrained_path)
                     except:
+                        print('load model exception ----------------------------------------------')
                         model.load_weights(
                             pretrained_path, by_name=True, skip_mismatch=True
                         )

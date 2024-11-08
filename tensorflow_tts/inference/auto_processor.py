@@ -28,6 +28,7 @@ from tensorflow_tts.processor import (
     LJSpeechUltimateProcessor,
     SynpaflexProcessor,
     JSUTProcessor,
+    GeorgianProcessor,
 )
 
 from tensorflow_tts.utils import CACHE_DIRECTORY, PROCESSOR_FILE_NAME, LIBRARY_NAME
@@ -44,6 +45,7 @@ CONFIG_MAPPING = OrderedDict(
         ("LJSpeechUltimateProcessor", LJSpeechUltimateProcessor),
         ("SynpaflexProcessor", SynpaflexProcessor),
         ("JSUTProcessor", JSUTProcessor),
+        ("GeorgianProcessor", GeorgianProcessor),
     ]
 )
 
