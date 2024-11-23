@@ -9,3 +9,7 @@ I fixed above error with below
 !pip install tensorflow-gpu==2.10.0
 !pip install tf-keras==2.10.0
 !pip install tensorflow-addons==0.18.0
+
+https://drive.google.com/file/d/19ycD76_hl9ZxTnSJiqXutaNvIsVAibcQ/view?usp=sharing
+
+wget --no-check-certificate 'https://docs.google.com/uc?export=download&id=19ycD76_hl9ZxTnSJiqXutaNvIsVAibcQ' -O model.h5
