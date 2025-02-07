@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text to Speech Test</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <h1>Text to Speech Test</h1>
+    <form id="textForm">
+        <label for="text">Enter text:</label><br>
+        <textarea id="text" name="text" rows="4" cols="50"></textarea><br><br>
+        <input type="submit" value="Speak">
+    </form>
+    <br>
+    <audio id="audioPlayer" controls></audio>
+
+    <script>
+        $(document).ready(function() {
+            $('#textForm').on('submit', function(event) {
+                event.preventDefault();
+                var text = $('#text').val();
+                $.ajax({
+                    url: '/speak',
+                    type: 'POST',
+                    data: { text: text },
+                    success: function(data) {
+                        $('#audioPlayer').attr('src', data.audio_file);
+                    }
+                });
+            });
+        });
+    </script>
+</body>

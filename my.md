@@ -13,3 +13,11 @@ I fixed above error with below
 https://drive.google.com/file/d/19ycD76_hl9ZxTnSJiqXutaNvIsVAibcQ/view?usp=sharing
 
 wget --no-check-certificate 'https://docs.google.com/uc?export=download&id=19ycD76_hl9ZxTnSJiqXutaNvIsVAibcQ' -O model.h5
+
+
+sudo apt update
+sudo apt install ufw
+sudo ufw status
+sudo ufw allow 8080/tcp
+sudo ufw enable
+sudo ufw status
